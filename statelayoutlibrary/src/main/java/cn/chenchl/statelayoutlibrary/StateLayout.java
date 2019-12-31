@@ -197,6 +197,8 @@ public class StateLayout extends FrameLayout {
                 postAnim(contentView);
                 if (useContentBgWhenLoading && contentView != null && contentView.getBackground() != null) {
                     setBackground(contentView.getBackground());
+                } else {
+                    setBackground(null);
                 }
                 if (enableLoadingAlpha) {
                     loadingView.setBackgroundColor(Color.parseColor("#66000000"));//添加半透明背景
