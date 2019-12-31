@@ -15,4 +15,5 @@ jobs:
         java-version: 1.8
     - name: Build with Gradle
       run: chmod 777 gradlew
-           ./gradlew build
+    - name: Build with Gradle1
+      run: ./gradlew build
