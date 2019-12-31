@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "HAHAH", Toast.LENGTH_SHORT).show();
                     }
                 })
+                .setEnableLoadingAlpha(true)
                 .setAnimDuration(300)
                 .with(this)
                 .showLoading("主页加载中");
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 .setEmptyResID(R.layout.custom_empty)
                 .setErrorResID(R.layout.custom_error)
                 .setAnimDuration(500)
+                .setUseContentBgWhenLoading(true)
                 .with(findViewById(R.id.login));
         findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -51,6 +51,7 @@ public class StateLayout extends FrameLayout {
     private LayoutInflater mLayoutInflater;
     private long animDuration = 300l;
     private boolean enableLoadingAlpha = false;
+    private boolean useContentBgWhenLoading = false;
 
     //重试点击监听
     public interface OnRetryClickListener {
@@ -194,6 +195,9 @@ public class StateLayout extends FrameLayout {
         switch (mState) {
             case State.CONTENT:
                 postAnim(contentView);
+                if (useContentBgWhenLoading && contentView != null && contentView.getBackground() != null) {
+                    setBackground(contentView.getBackground());
+                }
                 if (enableLoadingAlpha) {
                     loadingView.setBackgroundColor(Color.parseColor("#66000000"));//添加半透明背景
                 } else {
@@ -367,6 +371,11 @@ public class StateLayout extends FrameLayout {
 
     public StateLayout setEnableLoadingAlpha(boolean enableLoadingAlpha) {
         this.enableLoadingAlpha = enableLoadingAlpha;
+        return this;
+    }
+
+    public StateLayout setUseContentBgWhenLoading(boolean useContentBgWhenLoading) {
+        this.useContentBgWhenLoading = useContentBgWhenLoading;
         return this;
     }
 }
