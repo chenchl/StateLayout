@@ -5,7 +5,7 @@
 ```java
 if (view.getParent() == null) {
             addView(view, 0, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-        } else {
+} else {
             //降content从其父viewgroup中先移出
             ViewGroup parent = (ViewGroup) view.getParent();
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
@@ -15,5 +15,5 @@ if (view.getParent() == null) {
             addView(view, 0, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
             //把statelayout放进view的父viewgroup中
             parent.addView(this, index, layoutParams);
-        }
+}
 ```
