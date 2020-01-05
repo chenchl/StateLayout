@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@android:drawable/presence_video_busy"
+        android:title="Settings"
+        app:showAsAction="always" >
+        <menu>
+            <item
+                android:id="@+id/action_backup1"
+                android:icon="@android:drawable/ic_lock_idle_lock"
+                android:title="Backup"
+
+                 />
+            <item
+                android:id="@+id/action_delete2"
+                android:icon="@android:drawable/ic_lock_idle_charging"
+                android:title="Delete"
+                app:showAsAction="collapseActionView"
+
+                 />
+            <item
+                android:id="@+id/action_backup"
+                android:icon="@android:drawable/ic_lock_idle_lock"
+                android:title="Backup"
+                 />
+            <item
+                android:id="@+id/action_delete"
+                android:icon="@android:drawable/ic_lock_idle_charging"
+                android:title="Delete"
+                 />
+        </menu>
+    </item>
+</menu>
