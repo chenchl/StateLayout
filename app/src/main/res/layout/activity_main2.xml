@@ -47,7 +47,6 @@
                     app:layout_collapseMode="pin" />
 
                 <androidx.appcompat.widget.Toolbar
-
                     app:contentInsetStart="0dp"
                     app:contentInsetEnd="0dp"
                     app:contentInsetEndWithActions="0dp"

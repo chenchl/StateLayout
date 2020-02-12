@@ -30,6 +30,7 @@ public class Main2Activity extends AppCompatActivity {
         activityMain2Binding = DataBindingUtil.setContentView(this, R.layout.activity_main2);
         setSupportActionBar(activityMain2Binding.toolbar);
         //setTitleCenter(activityMain2Binding.toolbar);
+        activityMain2Binding.executePendingBindings();
 
         activityMain2Binding.c1.post(new Runnable() {
             @Override
@@ -37,7 +38,6 @@ public class Main2Activity extends AppCompatActivity {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             }
         });
-
 
        /* activityMain2Binding.toolbar.postDelayed(new Runnable() {
             @Override

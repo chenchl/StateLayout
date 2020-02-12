@@ -2,12 +2,9 @@ package cn.chenchl.statelayout;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import cn.chenchl.statelayoutlibrary.StateLayout;
 
@@ -21,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //针对contentview
         stateLayout = new StateLayout(this)
                 .setOnRetryClickListener(new StateLayout.OnRetryClickListener() {
                     @Override
@@ -38,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 stateLayout.showContent();
             }
         },2000);
+        //针对整个layout
         stateLayout2 = new StateLayout(this)
                 .setOnRetryClickListener(new StateLayout.OnRetryClickListener() {
                     @Override
@@ -71,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 stateLayout2.showContent();
             }
         });
+        //针对view
         stateLayout3 = new StateLayout(this)
                 .setOnRetryClickListener(new StateLayout.OnRetryClickListener() {
                     @Override
@@ -96,35 +96,5 @@ public class MainActivity extends AppCompatActivity {
                 },3000);
             }
         });
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item_loading:
-                stateLayout.showLoading("loading");
-                break;
-            case R.id.item_empty:
-                stateLayout.showEmpty("没数据啊");
-                break;
-            case R.id.item_error:
-                stateLayout.showError("错了完犊子");
-                break;
-            case R.id.item_content:
-                stateLayout.showContent();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }
