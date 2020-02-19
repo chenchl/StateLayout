@@ -20,7 +20,7 @@
 
   ```java
   dependencies {
-      implementation 'com.github.User:Repo:1.0.0'
+      implementation 'com.github.chenchl:StateLayout:1.0.0'
   }
   ```
 
