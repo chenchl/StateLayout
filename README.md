@@ -1,4 +1,5 @@
 # StateLayout
+[![](https://jitpack.io/v/chenchl/StateLayout.svg)](https://jitpack.io/#chenchl/StateLayout)
 布局动态状态管理（loading error empty normal）
 
 ## 使用方法
