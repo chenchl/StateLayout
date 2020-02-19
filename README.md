@@ -9,10 +9,10 @@
 
   ```java
   allprojects {
-   repositories {
-      ....
-      maven { url "https://jitpack.io" }
-   }
+      repositories {
+          ....
+              maven { url "https://jitpack.io" }
+      }
   }
   ```
 
@@ -20,8 +20,8 @@
 
   ```java
   dependencies {
-  		implementation 'com.github.User:Repo:1.0.0'
-  	}
+      implementation 'com.github.User:Repo:1.0.0'
+  }
   ```
 
 - **step3：**Now, enjoy it
@@ -53,16 +53,16 @@
 
 ```java
 if (view.getParent() == null) {
-            addView(view, 0, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+    addView(view, 0, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 } else {
-            //将content从其父viewgroup中先移出
-            ViewGroup parent = (ViewGroup) view.getParent();
-            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-            int index = parent.indexOfChild(view);
-            parent.removeView(view);
-            //把content包裹进statelayout
-            addView(view, 0, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-            //把statelayout放进view的父viewgroup中
-            parent.addView(this, index, layoutParams);
+    //将content从其父viewgroup中先移出
+    ViewGroup parent = (ViewGroup) view.getParent();
+    ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+    int index = parent.indexOfChild(view);
+    parent.removeView(view);
+    //把content包裹进statelayout
+    addView(view, 0, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+    //把statelayout放进view的父viewgroup中
+    parent.addView(this, index, layoutParams);
 }
 ```
