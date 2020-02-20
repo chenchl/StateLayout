@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-
+//apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven'
 group='com.github.chenchl.StateLayout'
 
 android {
@@ -31,4 +31,22 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
+}
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            // 仓库路径（只能是hosted仓库）
+            repository(url: 'http://localhost:8088/repository/chenchl/') {
+                // 你 Nexus 的账户密码
+                authentication(userName: 'admin', password: '891107ccl')
+            }
+            pom.project {
+                version '1.0.1'
+                artifactId 'stateLayout'
+                groupId 'com.github.chenchl'
+            }
+        }
+    }
 }
