@@ -5,7 +5,7 @@
 
 ## 使用方法
 
-- **step1：**You need add the jitpack.io repository
+- step1：You need add the jitpack.io repository
 
   ```java
   allprojects {
@@ -16,7 +16,7 @@
   }
   ```
 
-- **step2：**Add the dependencies in your module
+- step2：Add the dependencies in your module
 
   ```java
   dependencies {
@@ -24,7 +24,7 @@
   }
   ```
 
-- **step3：**Now, enjoy it
+- step3：Now, enjoy it
 
   ```java
   new StateLayout(this)
@@ -40,7 +40,7 @@
       .setEmptyResID()//设置空状态布局
       .setLoadingResID()//设置加载中状态布局
       .setAnimDuration(500)//设置状态切换时渐变动画持续时间
-      .with(this)//设置需要包裹的对象 可以使activity、fragment以及任意View
+      .with(this)//设置需要包裹的对象 可以是activity、fragment以及任意View
       .showLoading("主页加载中")//显示加载中状态
       .showEmpty()//显示空状态
       .showError()//显示加载失败状态
